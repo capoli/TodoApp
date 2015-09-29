@@ -1,16 +1,18 @@
 <h2>My Todo List</h2>
 <input type="text" ng-model="newItem" />
-<button ng-click="addItem(newItem)">Add</button>
-<table>
+<button class="btn btn-default" ng-click="addItem(newItem)">Add</button>
+<table class="table">
     <thead>
     <th>Description</th>
     <th>Done</th>
     </thead>
     <tbody>
-    <tr ng-repeat="item in todos">
+    <!--<tr ng-repeat="item in todos | filter:{done:false}">-->
+    <tr ng-repeat="item in todos | orderBy: 'description'">
         <td ui-sref="todo.detail({id: item.id})" ng-bind="item.description"></td>
         <td ng-if="item.done">Yes</td>
         <td ng-if="!item.done">No</td>
+        <td><input type="checkbox" ng-model="item.done"></td>
     </tr>
     </tbody>
 </table>

@@ -3,6 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
     'ui.router',
+    'ui.bootstrap',
+    'myApp.services',
     'myApp.controllers',
     'myApp.version'
 ])
