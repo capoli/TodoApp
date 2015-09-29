@@ -1,0 +1,16 @@
+<h2>My Todo List</h2>
+<input type="text" ng-model="newItem" />
+<button ng-click="addItem(newItem)">Add</button>
+<table>
+    <thead>
+    <th>Description</th>
+    <th>Done</th>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in todos">
+        <td ui-sref="todo.detail({id: item.id})" ng-bind="item.description"></td>
+        <td ng-if="item.done">Yes</td>
+        <td ng-if="!item.done">No</td>
+    </tr>
+    </tbody>
+</table>

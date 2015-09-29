@@ -1,0 +1,6 @@
+<h3>
+    <span ng-bind="todoItem.description"></span>
+    <span ng-if="todoItem.done">Yes</span>
+    <span ng-if="!todoItem.done">No</span>
+</h3>
+<button ng-click="completeItem()">Complete todo item</button>
